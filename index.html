@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Advogado - Seu Escritório Jurídico</title>
+    <!-- Inclui Tailwind CSS para um design responsivo e moderno -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Configuração do tema Tailwind para usar a fonte Inter -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        /* Estilo básico para a fonte Inter */
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8f8f8; /* Cor de fundo suave */
+        }
+        /* Estilo para o menu hambúrguer */
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 24px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 50; /* Garante que o menu esteja acima de outros elementos */
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        /* Animação para o menu hambúrguer quando ativo */
+        .hamburger-menu.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        /* Estilo para o menu lateral (off-canvas) */
+        .off-canvas-menu {
+            position: fixed;
+            top: 0;
+            left: -100%; /* Inicia fora da tela */
+            width: 80%; /* Largura do menu */
+            max-width: 300px;
+            height: 100%;
+            background-color: #1a202c; /* Fundo escuro para o menu */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 40; /* Abaixo do ícone do hambúrguer, mas acima do conteúdo */
+            padding-top: 64px; /* Espaço para o cabeçalho */
+            overflow-y: auto; /* Adiciona scroll se o conteúdo for muito longo */
+        }
+        .off-canvas-menu.open {
+            left: 0; /* Desliza para a tela */
+        }
+        .off-canvas-menu a {
+            padding: 1rem 1.5rem;
+            display: block;
+            color: #ffffff; /* Texto branco */
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1); /* Separador */
+            transition: background-color 0.2s ease;
+        }
+        .off-canvas-menu a:hover {
+            background-color: #2d3748; /* Cor ao passar o mouse */
+        }
+        /* Overlay para o conteúdo quando o menu está aberto */
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5); /* Fundo semi-transparente */
+            z-index: 30; /* Abaixo do menu */
+            display: none; /* Inicia oculto */
+        }
+        .overlay.active {
+            display: block; /* Mostra quando o menu está aberto */
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-sm py-4 px-4 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <!-- Logo do Advogado/Escritório -->
+            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-blue-500">
+            <h1 class="text-lg font-bold text-gray-800">Seu Nome | Advocacia</h1>
+        </div>
+        <!-- Ícone do Menu Hambúrguer -->
+        <div id="hamburgerIcon" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Menu Lateral (Off-canvas) -->
+    <nav id="offCanvasMenu" class="off-canvas-menu">
+        <ul class="list-none p-0 m-0">
+            <li><a href="index.html" class="nav-link">Inicial</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+            <li>
+                <a href="#" class="nav-link">Áreas de Atuação</a>
+                <ul class="ml-4">
+                    <li><a href="direito-bancario.html" class="nav-link">Direito Bancário</a></li>
+                    <li><a href="direito-ambiental.html" class="nav-link">Direito Ambiental</a></li>
+                    <li><a href="direito-penal.html" class="nav-link">Direito Penal</a></li>
+                    <li><a href="direito-consumidor.html" class="nav-link">Direito do Consumidor</a></li>
+                    <li><a href="direito-trabalho.html" class="nav-link">Direito do Trabalho</a></li>
+                    <li><a href="direito-previdenciario.html" class="nav-link">Direito Previdenciário</a></li>
+                    <li><a href="direito-patrimonial.html" class="nav-link">Direito Patrimonial</a></li>
+                    <li><a href="direito-familia.html" class="nav-link">Direito de Família e Sucessões</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para o conteúdo quando o menu está aberto -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Conteúdo Principal da Página Inicial -->
+    <main id="mainContent" class="flex-grow p-4 md:p-6 lg:p-8 overflow-y-auto">
+        <section class="text-center py-8 bg-blue-600 text-white rounded-lg shadow-md mb-8">
+            <h2 class="text-3xl font-extrabold mb-4">Bem-vindo ao Nosso Escritório Jurídico</h2>
+            <p class="text-lg max-w-2xl mx-auto">
+                Com expertise e dedicação, oferecemos soluções jurídicas personalizadas para suas necessidades.
+                Seja para empresas ou indivíduos, estamos prontos para defender seus direitos.
+            </p>
+        </section>
+        <section class="py-6 px-4 bg-white rounded-lg shadow-md mb-8">
+            <h3 class="text-2xl font-bold text-gray-800 mb-4 text-center">Nossas Áreas de Atuação</h3>
+            <p class="text-gray-700 text-center mb-6">
+                Conheça as principais áreas em que podemos te auxiliar. Clique em uma área para saber mais.
+            </p>
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <a href="direito-bancario.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito Bancário</h4>
+                    <p class="text-sm text-gray-600">Revisão de contratos, juros abusivos, defesa do consumidor bancário.</p>
+                </a>
+                <a href="direito-ambiental.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito Ambiental</h4>
+                    <p class="text-sm text-gray-600">Consultoria e litígios ambientais, licenciamento.</p>
+                </a>
+                <a href="direito-penal.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito Penal</h4>
+                    <p class="text-sm text-gray-600">Defesa criminal, acompanhamento em inquéritos e processos.</p>
+                </a>
+                <a href="direito-consumidor.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito do Consumidor</h4>
+                    <p class="text-sm text-gray-600">Defesa dos direitos do consumidor, vícios de produtos e serviços.</p>
+                </a>
+                <a href="direito-trabalho.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito do Trabalho</h4>
+                    <p class="text-sm text-gray-600">Reclamações trabalhistas para empregados, defesa de empresas, rescisão de contrato, verbas rescisórias, horas extras e assédio moral.</p>
+                </a>
+                <a href="direito-previdenciario.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito Previdenciário</h4>
+                    <p class="text-sm text-gray-600">Concessão de aposentadorias (idade, tempo de contribuição, especial), pensões, auxílio-doença, revisão de benefícios e planejamento previdenciário.</p>
+                </a>
+                <a href="direito-patrimonial.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito Patrimonial</h4>
+                    <p class="text-sm text-gray-600">Proteção de bens, planejamento sucessório, contratos, responsabilidade civil e ações possessórias.</p>
+                </a>
+                <a href="direito-familia.html" class="bg-gray-50 p-4 rounded-md shadow-sm hover:bg-gray-100 transition duration-200 block">
+                    <h4 class="font-semibold text-lg text-blue-700">Direito de Família e Sucessões</h4>
+                    <p class="text-sm text-gray-600">Divórcio, pensão alimentícia, guarda de filhos, inventário, partilha de bens, testamentos e união estável.</p>
+                </a>
+            </div>
+            <!-- O botão "Fale com um advogado agora" fixo já aparece na página, não precisamos duplicar no conteúdo -->
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-6 px-4 text-center rounded-t-lg">
+        <p>&copy; 2025 Seu Nome | Advocacia. Todos os direitos reservados.</p>
+        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-400 hover:underline">contato@seusite.com</a></p>
+    </footer>
+
+    <script>
+        // Elementos do DOM
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const offCanvasMenu = document.getElementById('offCanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        // Número de telefone para o WhatsApp (com código do país e DDD, sem espaços ou caracteres especiais)
+        const whatsappNumber = '+55 (21) 96633-6607'; // Exemplo: +55 (21) 98765-4321
+        const whatsappMessage = 'Olá, gostaria de conversar sobre um problema jurídico.';
+
+        // Função para alternar o menu hambúrguer e o menu lateral
+        function toggleMenu() {
+            hamburgerIcon.classList.toggle('active');
+            offCanvasMenu.classList.toggle('open');
+            overlay.classList.toggle('active');
+            // Impede o scroll do corpo quando o menu está aberto
+            document.body.style.overflow = offCanvasMenu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Adiciona evento de clique ao ícone do hambúrguer
+        hamburgerIcon.addEventListener('click', toggleMenu);
+
+        // Adiciona evento de clique ao overlay para fechar o menu
+        overlay.addEventListener('click', toggleMenu);
+
+        // Função para gerar o botão "Fale com um advogado agora"
+        function createWhatsappButton() {
+            const button = document.createElement('a');
+            button.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            button.target = '_blank'; // Abre em uma nova aba
+            button.className = 'fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
+            button.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp mr-2">
+                    <path d="M23 18a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V6a5 5 0 0 1 5-5h12a5 5 0 0 1 5 5z"></path>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                Fale com um advogado agora
+            `;
+            return button;
+        }
+
+        // Adiciona o botão do WhatsApp à página quando ela carrega
+        window.onload = () => {
+            document.body.appendChild(createWhatsappButton());
+        };
+    </script>
+</body>
+</html>
+
+

@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artigo: Licenciamento Ambiental - Seu Escritório Jurídico</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: {
+                        sans: ['Inter', 'sans-serif'],
+                    },
+                }
+            }
+        }
+    </script>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+            background-color: #f8f8f8;
+        }
+        .hamburger-menu {
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            width: 24px;
+            height: 20px;
+            cursor: pointer;
+            z-index: 50;
+        }
+        .hamburger-menu span {
+            display: block;
+            width: 100%;
+            height: 2px;
+            background-color: #333;
+            border-radius: 9999px;
+            transition: all 0.3s ease;
+        }
+        .hamburger-menu.active span:nth-child(1) {
+            transform: translateY(9px) rotate(45deg);
+        }
+        .hamburger-menu.active span:nth-child(2) {
+            opacity: 0;
+        }
+        .hamburger-menu.active span:nth-child(3) {
+            transform: translateY(-9px) rotate(-45deg);
+        }
+        .off-canvas-menu {
+            position: fixed;
+            top: 0;
+            left: -100%;
+            width: 80%;
+            max-width: 300px;
+            height: 100%;
+            background-color: #1a202c;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+            transition: left 0.3s ease;
+            z-index: 40;
+            padding-top: 64px;
+            overflow-y: auto;
+        }
+        .off-canvas-menu.open {
+            left: 0;
+        }
+        .off-canvas-menu a {
+            padding: 1rem 1.5rem;
+            display: block;
+            color: #ffffff;
+            text-decoration: none;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+            transition: background-color 0.2s ease;
+        }
+        .off-canvas-menu a:hover {
+            background-color: #2d3748;
+        }
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 30;
+            display: none;
+        }
+        .overlay.active {
+            display: block;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen flex flex-col">
+
+    <!-- Cabeçalho -->
+    <header class="bg-white shadow-sm py-4 px-4 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
+        <div class="flex items-center">
+            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-blue-500">
+            <h1 class="text-lg font-bold text-gray-800">Seu Nome | Advocacia</h1>
+        </div>
+        <div id="hamburgerIcon" class="hamburger-menu">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+    </header>
+
+    <!-- Menu Lateral (Off-canvas) -->
+    <nav id="offCanvasMenu" class="off-canvas-menu">
+        <ul class="list-none p-0 m-0">
+            <li><a href="index.html" class="nav-link">Inicial</a></li>
+            <li><a href="contato.html" class="nav-link">Contato</a></li>
+            <li>
+                <a href="#" class="nav-link">Áreas de Atuação</a>
+                <ul class="ml-4">
+                    <li><a href="direito-bancario.html" class="nav-link">Direito Bancário</a></li>
+                    <li><a href="direito-ambiental.html" class="nav-link">Direito Ambiental</a></li>
+                    <li><a href="direito-penal.html" class="nav-link">Direito Penal</a></li>
+                    <li><a href="direito-consumidor.html" class="nav-link">Direito do Consumidor</a></li>
+                    <li><a href="direito-trabalho.html" class="nav-link">Direito do Trabalho</a></li>
+                    <li><a href="direito-previdenciario.html" class="nav-link">Direito Previdenciário</a></li>
+                    <li><a href="direito-patrimonial.html" class="nav-link">Direito Patrimonial</a></li>
+                    <li><a href="direito-familia.html" class="nav-link">Direito de Família e Sucessões</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <!-- Overlay para o conteúdo quando o menu está aberto -->
+    <div id="overlay" class="overlay"></div>
+
+    <!-- Conteúdo Principal do Artigo: Licenciamento Ambiental -->
+    <main class="flex-grow p-4 md:p-6 lg:p-8 overflow-y-auto">
+        <section class="py-6 px-4 bg-white rounded-lg shadow-md mb-8">
+            <h2 class="text-2xl font-bold text-gray-800 mb-4 text-center">Licenciamento Ambiental: Um Guia Essencial para Empresas e Empreendimentos</h2>
+            <p class="text-gray-700 mb-4">
+                O licenciamento ambiental é um dos instrumentos mais importantes da Política Nacional do Meio Ambiente, estabelecido pela Lei nº 6.938/81. Trata-se de um procedimento administrativo pelo qual o órgão ambiental competente licencia a localização, instalação, ampliação e operação de empreendimentos e atividades utilizadoras de recursos ambientais consideradas efetiva ou potencialmente poluidoras ou daquelas que, sob qualquer forma, possam causar degradação ambiental.
+            </p>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">Etapas do Licenciamento</h3>
+            <p class="text-gray-700 mb-4">
+                O processo de licenciamento ambiental é composto por diferentes etapas, que variam de acordo com a complexidade e o potencial poluidor da atividade:
+            </p>
+            <ul class="list-disc pl-5 text-gray-700 space-y-2 mb-6">
+                <li><strong>Licença Prévia (LP):</strong> Concedida na fase preliminar do planejamento do empreendimento ou atividade, aprovando sua localização e concepção, atestando a viabilidade ambiental e estabelecendo os requisitos básicos e condicionantes a serem atendidos nas próximas fases.</li>
+                <li><strong>Licença de Instalação (LI):</strong> Autoriza a instalação do empreendimento ou atividade de acordo com as especificações constantes dos planos, programas e projetos aprovados, incluindo as medidas de controle ambiental e demais condicionantes.</li>
+                <li><strong>Licença de Operação (LO):</strong> Autoriza a operação da atividade ou empreendimento, após a verificação do efetivo cumprimento das condicionantes das licenças anteriores e das medidas de controle ambiental.</li>
+            </ul>
+            <h3 class="text-xl font-semibold text-blue-700 mb-2">A Importância da Assessoria Jurídica</h3>
+            <p class="text-gray-700 mb-4">
+                O processo de licenciamento ambiental é complexo e exige conhecimento aprofundado da legislação ambiental. Falhas ou omissões podem resultar em multas pesadas, embargos e até mesmo ações penais. Nossa assessoria jurídica especializada garante que seu empreendimento esteja em total conformidade, desde a fase de planejamento até a operação, mitigando riscos e garantindo a sustentabilidade do negócio.
+            </p>
+            <p class="text-gray-700">
+                Se você tem dúvidas sobre o licenciamento ambiental ou precisa de auxílio em qualquer etapa do processo, entre em contato conosco.
+            </p>
+            <div class="text-center mt-8">
+                <a href="contato.html" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                    Fale Conosco para Consultoria Ambiental
+                </a>
+            </div>
+        </section>
+    </main>
+
+    <!-- Rodapé -->
+    <footer class="bg-gray-800 text-white py-6 px-4 text-center rounded-t-lg">
+        <p>&copy; 2025 Seu Nome | Advocacia. Todos os direitos reservados.</p>
+        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-400 hover:underline">contato@seusite.com</a></p>
+    </footer>
+
+    <script>
+        // Elementos do DOM
+        const hamburgerIcon = document.getElementById('hamburgerIcon');
+        const offCanvasMenu = document.getElementById('offCanvasMenu');
+        const overlay = document.getElementById('overlay');
+
+        // Número de telefone para o WhatsApp (com código do país e DDD, sem espaços ou caracteres especiais)
+        const whatsappNumber = '+55 (21) 96633-6607'; // Exemplo: +55 (21) 98765-4321
+        const whatsappMessage = 'Olá, gostaria de conversar sobre um problema jurídico.';
+
+        // Função para alternar o menu hambúrguer e o menu lateral
+        function toggleMenu() {
+            hamburgerIcon.classList.toggle('active');
+            offCanvasMenu.classList.toggle('open');
+            overlay.classList.toggle('active');
+            document.body.style.overflow = offCanvasMenu.classList.contains('open') ? 'hidden' : '';
+        }
+
+        // Adiciona evento de clique ao ícone do hambúrguer
+        hamburgerIcon.addEventListener('click', toggleMenu);
+
+        // Adiciona evento de clique ao overlay para fechar o menu
+        overlay.addEventListener('click', toggleMenu);
+
+        // Função para gerar o botão "Fale com um advogado agora"
+        function createWhatsappButton() {
+            const button = document.createElement('a');
+            button.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
+            button.target = '_blank';
+            button.className = 'fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
+            button.innerHTML = `
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp mr-2">
+                    <path d="M23 18a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V6a5 5 0 0 1 5-5h12a5 5 0 0 1 5 5z"></path>
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path>
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line>
+                </svg>
+                Fale com um advogado agora
+            `;
+            return button;
+        }
+
+        // Adiciona o botão do WhatsApp à página quando ela carrega
+        window.onload = () => {
+            document.body.appendChild(createWhatsappButton());
+        };
+    </script>
+</body>
+</html>
