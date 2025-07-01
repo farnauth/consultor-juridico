@@ -56,7 +56,7 @@
             width: 80%;
             max-width: 300px;
             height: 100%;
-            background-color: #1a202c;
+            background-color: #1a202c; /* Fundo escuro padrão no CSS, será sobrescrito pela classe Tailwind */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             transition: left 0.3s ease;
             z-index: 40;
@@ -69,13 +69,13 @@
         .off-canvas-menu a {
             padding: 1rem 1.5rem;
             display: block;
-            color: #ffffff;
+            color: #ffffff; /* Cor padrão no CSS, será sobrescrito pela classe Tailwind */
             text-decoration: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s ease;
         }
         .off-canvas-menu a:hover {
-            background-color: #2d3748;
+            background-color: #2d3748; /* Cor padrão no CSS, será sobrescrito pela classe Tailwind */
         }
         .overlay {
             position: fixed;
@@ -97,7 +97,7 @@
     <!-- Cabeçalho -->
     <header class="bg-white shadow-sm py-4 px-4 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
         <div class="flex items-center">
-            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-blue-500">
+            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-gray-400">
             <h1 class="text-lg font-bold text-gray-800">Seu Nome | Advocacia</h1>
         </div>
         <div id="hamburgerIcon" class="hamburger-menu">
@@ -108,21 +108,21 @@
     </header>
 
     <!-- Menu Lateral (Off-canvas) -->
-    <nav id="offCanvasMenu" class="off-canvas-menu">
+    <nav id="offCanvasMenu" class="off-canvas-menu bg-gray-900">
         <ul class="list-none p-0 m-0">
-            <li><a href="index.html" class="nav-link">Inicial</a></li>
-            <li><a href="contato.html" class="nav-link">Contato</a></li>
+            <li><a href="index.html" class="nav-link text-gray-100 hover:bg-gray-700">Inicial</a></li>
+            <li><a href="contato.html" class="nav-link text-gray-100 hover:bg-gray-700">Contato</a></li>
             <li>
-                <a href="#" class="nav-link">Áreas de Atuação</a>
+                <a href="#" class="nav-link text-gray-100 hover:bg-gray-700">Áreas de Atuação</a>
                 <ul class="ml-4">
-                    <li><a href="direito-bancario.html" class="nav-link">Direito Bancário</a></li>
-                    <li><a href="direito-ambiental.html" class="nav-link">Direito Ambiental</a></li>
-                    <li><a href="direito-penal.html" class="nav-link">Direito Penal</a></li>
-                    <li><a href="direito-consumidor.html" class="nav-link">Direito do Consumidor</a></li>
-                    <li><a href="direito-trabalho.html" class="nav-link">Direito do Trabalho</a></li>
-                    <li><a href="direito-previdenciario.html" class="nav-link">Direito Previdenciário</a></li>
-                    <li><a href="direito-patrimonial.html" class="nav-link">Direito Patrimonial</a></li>
-                    <li><a href="direito-familia.html" class="nav-link">Direito de Família e Sucessões</a></li>
+                    <li><a href="direito-bancario.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Bancário</a></li>
+                    <li><a href="direito-ambiental.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Ambiental</a></li>
+                    <li><a href="direito-penal.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Penal</a></li>
+                    <li><a href="direito-consumidor.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito do Consumidor</a></li>
+                    <li><a href="direito-trabalho.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito do Trabalho</a></li>
+                    <li><a href="direito-previdenciario.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Previdenciário</a></li>
+                    <li><a href="direito-patrimonial.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Patrimonial</a></li>
+                    <li><a href="direito-familia.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito de Família e Sucessões</a></li>
                 </ul>
             </li>
         </ul>
@@ -141,27 +141,30 @@
             <form id="articleForm" class="space-y-4">
                 <div>
                     <label for="nome" class="block text-gray-700 font-medium mb-1">Nome Completo</label>
-                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="text" id="nome" name="nome" placeholder="Seu nome completo"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700" required>
                 </div>
                 <div>
                     <label for="email" class="block text-gray-700 font-medium mb-1">E-mail</label>
-                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="email" id="email" name="email" placeholder="seu.email@exemplo.com"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700" required>
                 </div>
                 <div>
                     <label for="celular" class="block text-gray-700 font-medium mb-1">Celular</label>
-                    <input type="tel" id="celular" name="celular" placeholder="(XX) XXXXX-XXXX" class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500" required>
+                    <input type="tel" id="celular" name="celular" placeholder="(XX) XXXXX-XXXX"
+                           class="w-full px-4 py-2 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-gray-700" required>
                 </div>
                 <!-- Campo escondido para guardar qual artigo foi selecionado -->
                 <input type="hidden" id="selectedArticle" name="selectedArticle">
-                <button type="submit" class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-md w-full transition duration-300">Acessar Artigo</button>
+                <button type="submit" class="bg-gray-700 hover:bg-gray-800 text-white font-bold py-2 px-4 rounded-md w-full transition duration-300">Acessar Artigo</button>
             </form>
         </section>
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white py-6 px-4 text-center rounded-t-lg">
+    <footer class="bg-gray-900 text-gray-200 py-6 px-4 text-center rounded-t-lg">
         <p>&copy; 2025 Seu Nome | Advocacia. Todos os direitos reservados.</p>
-        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-400 hover:underline">contato@seusite.com</a></p>
+        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-300 hover:underline">contato@seusite.com</a></p>
     </footer>
 
     <script>
@@ -173,7 +176,7 @@
         const selectedArticleInput = document.getElementById('selectedArticle');
 
         // Número de telefone para o WhatsApp (com código do país e DDD, sem espaços ou caracteres especiais)
-        const whatsappNumber = '+55 (21) 96633-6607'; // Exemplo: +55 (21) 98765-4321
+        const whatsappNumber = '5521966336607'; // Exemplo: +55 (21) 98765-4321
         const whatsappMessage = 'Olá, gostaria de conversar sobre um problema jurídico.';
 
         // Função para alternar o menu hambúrguer e o menu lateral
@@ -195,7 +198,7 @@
             const button = document.createElement('a');
             button.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
             button.target = '_blank';
-            button.className = 'fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
+            button.className = 'fixed bottom-4 right-4 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
             button.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp mr-2">
                     <path d="M23 18a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V6a5 5 0 0 1 5-5h12a5 5 0 0 1 5 5z"></path>
@@ -223,33 +226,12 @@
         articleForm.addEventListener('submit', (e) => {
             e.preventDefault(); // Impede o envio padrão do formulário
 
-            // Em um site real, você enviaria os dados (nome, email, celular, artigo) para um servidor aqui.
-            // Por exemplo, usando `fetch()`:
-            /*
-            const formData = new FormData(articleForm);
-            fetch('/api/salvar-dados', {
-                method: 'POST',
-                body: formData
-            }).then(response => response.json())
-              .then(data => {
-                  console.log('Dados enviados com sucesso:', data);
-                  // Redireciona para o artigo após o envio bem-sucedido
-                  window.location.href = `${selectedArticleInput.value}-artigo.html`;
-              })
-              .catch(error => {
-                  console.error('Erro ao enviar dados:', error);
-                  // Opcional: mostrar uma mensagem de erro para o usuário
-              });
-            */
-
             // Para esta demonstração, simplesmente redirecionamos para o artigo.
             const artigoSelecionado = selectedArticleInput.value;
             if (artigoSelecionado) {
                 window.location.href = `${artigoSelecionado}-artigo.html`;
             } else {
-                // Em um ambiente real, você usaria um modal ou uma mensagem na tela, não alert().
-                // Este alert é apenas para fins de demonstração rápida.
-                alert('Erro: Artigo não especificado.'); 
+                console.error('Erro: Artigo não especificado.');
             }
         });
     </script>

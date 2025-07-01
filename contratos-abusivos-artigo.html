@@ -56,7 +56,7 @@
             width: 80%;
             max-width: 300px;
             height: 100%;
-            background-color: #1a202c;
+            background-color: #1a202c; /* Fundo escuro para o menu */
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
             transition: left 0.3s ease;
             z-index: 40;
@@ -69,13 +69,13 @@
         .off-canvas-menu a {
             padding: 1rem 1.5rem;
             display: block;
-            color: #ffffff;
+            color: #e2e8f0; /* Texto cinza claro para links do menu */
             text-decoration: none;
             border-bottom: 1px solid rgba(255, 255, 255, 0.1);
             transition: background-color 0.2s ease;
         }
         .off-canvas-menu a:hover {
-            background-color: #2d3748;
+            background-color: #4a5568; /* Cor ao passar o mouse (cinza mais escuro) */
         }
         .overlay {
             position: fixed;
@@ -97,7 +97,7 @@
     <!-- Cabeçalho -->
     <header class="bg-white shadow-sm py-4 px-4 flex items-center justify-between sticky top-0 z-50 rounded-b-lg">
         <div class="flex items-center">
-            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-blue-500">
+            <img src="timbre.jpeg" alt="Logo do Advogado" class="w-10 h-10 rounded-full mr-3 border border-gray-400">
             <h1 class="text-lg font-bold text-gray-800">Seu Nome | Advocacia</h1>
         </div>
         <div id="hamburgerIcon" class="hamburger-menu">
@@ -108,21 +108,21 @@
     </header>
 
     <!-- Menu Lateral (Off-canvas) -->
-    <nav id="offCanvasMenu" class="off-canvas-menu">
+    <nav id="offCanvasMenu" class="off-canvas-menu bg-gray-900">
         <ul class="list-none p-0 m-0">
-            <li><a href="index.html" class="nav-link">Inicial</a></li>
-            <li><a href="contato.html" class="nav-link">Contato</a></li>
+            <li><a href="index.html" class="nav-link text-gray-100 hover:bg-gray-700">Inicial</a></li>
+            <li><a href="contato.html" class="nav-link text-gray-100 hover:bg-gray-700">Contato</a></li>
             <li>
-                <a href="#" class="nav-link">Áreas de Atuação</a>
+                <a href="#" class="nav-link text-gray-100 hover:bg-gray-700">Áreas de Atuação</a>
                 <ul class="ml-4">
-                    <li><a href="direito-bancario.html" class="nav-link">Direito Bancário</a></li>
-                    <li><a href="direito-ambiental.html" class="nav-link">Direito Ambiental</a></li>
-                    <li><a href="direito-penal.html" class="nav-link">Direito Penal</a></li>
-                    <li><a href="direito-consumidor.html" class="nav-link">Direito do Consumidor</a></li>
-                    <li><a href="direito-trabalho.html" class="nav-link">Direito do Trabalho</a></li>
-                    <li><a href="direito-previdenciario.html" class="nav-link">Direito Previdenciário</a></li>
-                    <li><a href="direito-patrimonial.html" class="nav-link">Direito Patrimonial</a></li>
-                    <li><a href="direito-familia.html" class="nav-link">Direito de Família e Sucessões</a></li>
+                    <li><a href="direito-bancario.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Bancário</a></li>
+                    <li><a href="direito-ambiental.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Ambiental</a></li>
+                    <li><a href="direito-penal.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Penal</a></li>
+                    <li><a href="direito-consumidor.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito do Consumidor</a></li>
+                    <li><a href="direito-trabalho.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito do Trabalho</a></li>
+                    <li><a href="direito-previdenciario.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Previdenciário</a></li>
+                    <li><a href="direito-patrimonial.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito Patrimonial</a></li>
+                    <li><a href="direito-familia.html" class="nav-link text-gray-300 hover:bg-gray-700">Direito de Família e Sucessões</a></li>
                 </ul>
             </li>
         </ul>
@@ -138,7 +138,7 @@
             <p class="text-gray-700 mb-4">
                 No complexo universo das relações de consumo, é comum deparar-se com contratos que, à primeira vista, parecem inofensivos, mas que escondem cláusulas abusivas. Tais cláusulas podem gerar desequilíbrio na relação entre consumidor e fornecedor, resultando em prejuízos financeiros ou privação de direitos.
             </p>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">O Que Caracteriza um Contrato Abusivo?</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">O Que Caracteriza um Contrato Abusivo?</h3>
             <p class="text-gray-700 mb-4">
                 Um contrato é considerado abusivo quando suas cláusulas colocam o consumidor em desvantagem exagerada, são incompatíveis com a boa-fé ou a equidade, ou restringem direitos fundamentais. O Código de Defesa do Consumidor (CDC) lista diversos exemplos de cláusulas consideradas nulas de pleno direito, como:
             </p>
@@ -149,11 +149,11 @@
                 <li>Cláusulas que permitam ao fornecedor modificar unilateralmente o conteúdo do contrato.</li>
                 <li>Cláusulas que proíbam o consumidor de exercer o direito de arrependimento (em compras fora do estabelecimento comercial).</li>
             </ul>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">Como o CDC Protege Você?</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Como o CDC Protege Você?</h3>
             <p class="text-gray-700 mb-4">
                 O CDC é a principal ferramenta legal para combater os contratos abusivos. Ele garante que as cláusulas que ferem os direitos básicos do consumidor sejam consideradas nulas, ou seja, sem efeito legal. Além disso, o CDC permite a revisão judicial de contratos para restabelecer o equilíbrio da relação de consumo.
             </p>
-            <h3 class="text-xl font-semibold text-blue-700 mb-2">Qual a Importância de um Advogado?</h3>
+            <h3 class="text-xl font-semibold text-gray-800 mb-2">Qual a Importância de um Advogado?</h3>
             <p class="text-gray-700 mb-4">
                 Identificar uma cláusula abusiva e saber como agir pode ser complexo. Um advogado especializado em Direito do Consumidor pode:
             </p>
@@ -167,7 +167,7 @@
                 Não assine contratos sem entender completamente seus termos e, se tiver dúvidas, busque sempre a orientação profissional. Se você já assinou um contrato e desconfia de abusividade, entre em contato conosco.
             </p>
             <div class="text-center mt-8">
-                <a href="contato.html" class="inline-block bg-blue-500 hover:bg-blue-700 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
+                <a href="contato.html" class="inline-block bg-gray-700 hover:bg-gray-800 text-white font-bold py-3 px-6 rounded-lg transition duration-300">
                     Fale Conosco para Análise do seu Contrato
                 </a>
             </div>
@@ -175,9 +175,9 @@
     </main>
 
     <!-- Rodapé -->
-    <footer class="bg-gray-800 text-white py-6 px-4 text-center rounded-t-lg">
+    <footer class="bg-gray-900 text-gray-200 py-6 px-4 text-center rounded-t-lg">
         <p>&copy; 2025 Seu Nome | Advocacia. Todos os direitos reservados.</p>
-        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-400 hover:underline">contato@seusite.com</a></p>
+        <p class="text-sm mt-2">Entre em contato: <a href="mailto:contato@seusite.com" class="text-blue-300 hover:underline">contato@seusite.com</a></p>
     </footer>
 
     <script>
@@ -187,7 +187,7 @@
         const overlay = document.getElementById('overlay');
 
         // Número de telefone para o WhatsApp (com código do país e DDD, sem espaços ou caracteres especiais)
-        const whatsappNumber = ‘+55 (21) 96633-6607’; // Exemplo: +55 (21) 98765-4321
+        const whatsappNumber = '5521966336607'; // Exemplo: +55 (21) 98765-4321
         const whatsappMessage = 'Olá, gostaria de conversar sobre um problema jurídico.';
 
         // Função para alternar o menu hambúrguer e o menu lateral
@@ -209,7 +209,7 @@
             const button = document.createElement('a');
             button.href = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`;
             button.target = '_blank';
-            button.className = 'fixed bottom-4 right-4 bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
+            button.className = 'fixed bottom-4 right-4 bg-green-600 hover:bg-green-700 text-white font-bold py-3 px-6 rounded-full shadow-lg transition duration-300 ease-in-out transform hover:scale-105 flex items-center z-40';
             button.innerHTML = `
                 <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-whatsapp mr-2">
                     <path d="M23 18a5 5 0 0 1-5 5H6a5 5 0 0 1-5-5V6a5 5 0 0 1 5-5h12a5 5 0 0 1 5 5z"></path>
